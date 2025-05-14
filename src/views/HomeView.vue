@@ -621,7 +621,6 @@
   <div class="relative py-12 bg-gradient-to-br from-[#dee3e9]/10 to-[#b7ebfa]/10 overflow-hidden">
     <div class="w-full px-0 sm:px-4">
       <div class="relative bg-white sm:rounded-xl shadow-lg border-y sm:border border-[#dee3e9]">
-        <!-- Decoración de bordes reducida -->
         <div class="absolute -left-6 -top-6 w-24 h-24 bg-[#448ba9]/5 rounded-full blur"></div>
         <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-[#104e75]/5 rounded-full blur"></div>
         
@@ -1601,8 +1600,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Copyright -->
       <div class="py-4 flex flex-col md:flex-row justify-between items-center gap-2 text-[0.6rem] md:text-[0.65rem]">
         <div class="text-[#448ba9]/80 text-center order-last md:order-first">
           © 2024 Fulness - Todos los derechos reservados

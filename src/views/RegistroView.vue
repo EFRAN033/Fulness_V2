@@ -346,7 +346,6 @@ export default {
     },
     socialLogin(provider) {
       if (provider === 'google') {
-        // Forzar el popup de Google si el botón no funciona
         window.google.accounts.id.prompt();
       } else {
         console.log(`Iniciando sesión con ${provider}`);
@@ -357,7 +356,7 @@ export default {
 </script>
 
 <style>
-/* Estilos adicionales para el botón de Google */
+
 .g_id_signin iframe {
   width: 100% !important;
   height: 40px !important;
