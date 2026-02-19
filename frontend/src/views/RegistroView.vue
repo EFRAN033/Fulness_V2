@@ -238,8 +238,38 @@ export default {
     async handleSubmit() {
       this.loading = true;
       try {
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        // Lógica de registro normal aquí
+        const payload = {
+          email: this.form.email,
+          password: this.form.password,
+          full_name: this.form.nombre,
+          identification: this.form.dni,
+          phone: this.form.telefono,
+          role: this.isFisio ? 'especialista' : 'paciente',
+          medical_license: this.isFisio ? this.form.num_colegiado : null,
+          specialty: this.isFisio ? this.form.especialidad : null
+        };
+
+        const response = await fetch('http://127.0.0.1:8000/auth/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.detail || 'Error en el registro');
+        }
+
+        // Registro exitoso
+        alert('Cuenta creada exitosamente. Por favor inicia sesión.');
+        this.$router.push('/login');
+
+      } catch (error) {
+        console.error('Error:', error);
+        alert(error.message);
       } finally {
         this.loading = false;
       }
